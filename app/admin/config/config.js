@@ -9,7 +9,7 @@ var config_app = {
 	tempParam : {
 		__CSS__ : config.publicPath+MODULE_NAME+'/css/',
 		__JS__ : config.publicPath+MODULE_NAME+'/js/',
-		__IMG__ : config.publicPath+MODULE_NAME+'/img/',
+		__IMG__ : config.publicPath+MODULE_NAME+'/images/',
 	}
 };
 module.exports = config_app;
