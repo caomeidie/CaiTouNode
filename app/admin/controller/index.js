@@ -13,7 +13,7 @@ var indexController = function(){
 	};
 
 	this.postloginAction = function(){
-		return POST;
+		return POST.username;
 	}
 }
 
