@@ -1,4 +1,4 @@
-util = require('util');
+var upload = require(config.libPath+'upload');
 var indexController = function(){
 	this.loginAction = function(){
 		var sys_name = '小馒头管理系统';
@@ -13,7 +13,10 @@ var indexController = function(){
 	};
 
 	this.postloginAction = function(){
-		return POST.username;
+		var file_path = './aaa.png';
+		upload.set_size(50);
+		upload.upload(POST.bbb,file_path);
+		return '';
 	}
 }
 
