@@ -14,9 +14,12 @@ var indexController = function(){
 	};
 
 	this.postloginAction = function(){
-		var file_path = './aaa.png';
+		var file_path = './bbb.png';
 		var test = gm(file_path).resize('200', '200').stream(function(err, stdout, stderr) {
-                stdout.pipe(FS.createWriteStream("./ccc.png"));
+			console.log(stdout);
+				//const r = FS.createReadStream(stdout);
+				//const w = FS.createWriteStream("./ccc.png");
+                //r.pipe(w);
             });
 		// imageMagick(file_path).resize(150, 150, '!').autoOrient().write('./bbb.png', function(err){  
   //           if (err) {  
