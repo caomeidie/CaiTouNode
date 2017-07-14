@@ -1,6 +1,7 @@
 var upload = require(config.libPath+'upload');
-var gm = require('gm');
+var common = require('./common');
 var indexController = function(){
+	common.indexAction();
 	this.loginAction = function(){
 		var sys_name = '小馒头管理系统';
 		temp.assign({sys_name:sys_name});
@@ -14,7 +15,7 @@ var indexController = function(){
 	};
 
 	this.postloginAction = function(){
-		var file_path = './bbb.jpg';
+		var file_path = './ccc.jpg';
 		upload.set_size(500);
 		upload.upload(POST.bbb,file_path,(err)=>{
 			if(!err){
