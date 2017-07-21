@@ -1,6 +1,6 @@
 var upload = require(config.libPath+'upload');
 var common = require('./common');
-var mysql = require('mysql');
+//var mysql = require('mysql');
 var indexController = function(){
 	common.indexAction();
 	this.loginAction = function(){
