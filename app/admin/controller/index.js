@@ -5,6 +5,7 @@ var indexController = function(){
 	common.indexAction();
 	this.loginAction = function(){
 		var sys_name = '小馒头管理系统';
+		cookie('name','xiaomimi');
 		temp.assign({sys_name:sys_name});
 		var result = temp.display();
 		return result;
@@ -12,6 +13,7 @@ var indexController = function(){
 
 	this.testAction = function(){
 		var result = temp.display();
+		console.log(getCookie('name'));
 		return result;
 	};
 
