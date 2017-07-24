@@ -6,6 +6,13 @@ var indexController = function(){
 	this.loginAction = function(){
 		var sys_name = '小馒头管理系统';
 		cookie('name','xiaomimi');
+		cookie('name2','xiaomimi2');
+		cookie('name3','xiaomimi3');
+		var arr = new Array();
+		arr['name4'] = 'xiaomimi4';
+		arr['name5'] = 'xiaomimi5';
+		arr['name6'] = 'xiaomimi6';
+		cookie(arr);
 		temp.assign({sys_name:sys_name});
 		var result = temp.display();
 		return result;
@@ -13,7 +20,6 @@ var indexController = function(){
 
 	this.testAction = function(){
 		var result = temp.display();
-		console.log(getCookie('name'));
 		return result;
 	};
 
