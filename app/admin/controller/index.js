@@ -19,6 +19,7 @@ var indexController = function(){
 	};
 
 	this.testAction = function(){
+		sessionStart();
 		var result = temp.display();
 		return result;
 	};
