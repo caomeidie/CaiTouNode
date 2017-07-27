@@ -8,18 +8,18 @@ var indexController = function(){
 		cookie('name','xiaomimi');
 		cookie('name2','xiaomimi2');
 		cookie('name3','xiaomimi3');
-		var arr = new Array();
-		arr['name4'] = 'xiaomimi4';
-		arr['name5'] = 'xiaomimi5';
-		arr['name6'] = 'xiaomimi6';
-		cookie(arr);
+		// var arr = new Array();
+		// arr['name4'] = 'xiaomimi4';
+		// arr['name5'] = 'xiaomimi5';
+		// arr['name6'] = 'xiaomimi6';
+		//cookie(arr);
 		temp.assign({sys_name:sys_name});
 		var result = temp.display();
 		return result;
 	};
 
 	this.testAction = function(){
-		session('name','xiaomin');
+		//session('name','xiaomin');
 		var result = temp.display();
 		return result;
 	};
