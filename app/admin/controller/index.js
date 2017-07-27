@@ -19,7 +19,7 @@ var indexController = function(){
 	};
 
 	this.testAction = function(){
-		session();
+		session('name','xiaomin');
 		var result = temp.display();
 		return result;
 	};
