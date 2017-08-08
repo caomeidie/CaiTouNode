@@ -1,26 +1,25 @@
 var upload = require(config.libPath+'upload');
 var common = require('./common');
-var controller = require(config.libPath+'controller');
 //var mysql = require('mysql');
-var indexController = function(req, resp, temp){
-	var C = new controller(req, resp);
+var indexController = function(web, temp){
+	//var C = new controller(req, resp);
 	common.indexAction();
 	this.indexAction = function(){
 		var sys_name = '小馒头管理系统';
 		//console.log(req.headers.cookie);
 		//console.log(this.C.cookie());
-		C.cookie('name','xiaomimi');
-		console.log(req.headers.cookie);
-		//cookie('name2','xiaomimi2');
-		//cookie('name3','xiaomimi3');
-		// var arr = new Array();
+		web.cookie('name','xiaomimi');
+		web.cookie('name2','xiaomimi2');
+		web.cookie('name3','xiaomimi3');
+		var arr = new Array();
 		// arr['name4'] = 'xiaomimi4';
 		// arr['name5'] = 'xiaomimi5';
 		// arr['name6'] = 'xiaomimi6';
-		//cookie(arr);
-		//temp.assign({sys_name:sys_name});
-		//var result = temp.display();
-		//return result;
+		// web.cookie(arr);
+		console.log(web.cookie());
+		temp.assign({sys_name:sys_name});
+		var result = temp.display();
+		return result;
 	};
 
 	this.testAction = function(){
