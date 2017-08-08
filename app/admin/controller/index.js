@@ -3,10 +3,14 @@ var common = require('./common');
 var controller = require(config.libPath+'controller');
 //var mysql = require('mysql');
 var indexController = function(req, resp, temp){
+	var C = new controller(req, resp);
 	common.indexAction();
 	this.indexAction = function(){
 		var sys_name = '小馒头管理系统';
-		//cookie('name','xiaomimi');
+		//console.log(req.headers.cookie);
+		//console.log(this.C.cookie());
+		C.cookie('name','xiaomimi');
+		console.log(req.headers.cookie);
 		//cookie('name2','xiaomimi2');
 		//cookie('name3','xiaomimi3');
 		// var arr = new Array();
@@ -14,7 +18,7 @@ var indexController = function(req, resp, temp){
 		// arr['name5'] = 'xiaomimi5';
 		// arr['name6'] = 'xiaomimi6';
 		//cookie(arr);
-		temp.assign({sys_name:sys_name});
+		//temp.assign({sys_name:sys_name});
 		//var result = temp.display();
 		//return result;
 	};
