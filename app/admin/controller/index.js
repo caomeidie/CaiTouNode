@@ -6,17 +6,19 @@ var indexController = function(web, temp){
 	common.indexAction();
 	this.indexAction = function(){
 		var sys_name = '小馒头管理系统';
-		//console.log(req.headers.cookie);
-		//console.log(this.C.cookie());
-		web.cookie('name','xiaomimi');
-		web.cookie('name2','xiaomimi2');
-		web.cookie('name3','xiaomimi3');
-		var arr = new Array();
+		var opt = new Array();
+		opt['httpOnly'] = true;
+		web.setCookie('name','xiaomimi',opt);
+		web.setCookie('name2','xiaomimi2',opt);
+		web.setSession('name2','xiaomimi2',opt);
+		// var arr = new Array();
 		// arr['name4'] = 'xiaomimi4';
 		// arr['name5'] = 'xiaomimi5';
 		// arr['name6'] = 'xiaomimi6';
-		// web.cookie(arr);
-		console.log(web.cookie());
+		web.setCookie(arr);
+		web.unsetCookie();
+		console.log(web.getCookie());
+		//console.log(web.getCookie('name4'));
 		temp.assign({sys_name:sys_name});
 		var result = temp.display();
 		return result;
