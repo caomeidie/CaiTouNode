@@ -6,10 +6,10 @@
  * */
 var config_app = {
 	//template static files' path
-	tempParam : {
-		__CSS__ : config.publicPath+MODULE_NAME+'/css/',
-		__JS__ : config.publicPath+MODULE_NAME+'/js/',
-		__IMG__ : config.publicPath+MODULE_NAME+'/images/',
+	tempParam: {
+		__CSS__: config.publicPath + MODULE_NAME + '/css/',
+		__JS__: config.publicPath + MODULE_NAME + '/js/',
+		__IMG__: config.publicPath + MODULE_NAME + '/images/',
 	}
 };
 module.exports = config_app;
