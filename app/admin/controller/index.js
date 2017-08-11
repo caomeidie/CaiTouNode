@@ -2,7 +2,6 @@ var upload = require(config.libPath + 'upload');
 var common = require('./common');
 //var mysql = require('mysql');
 var indexController = function(web, temp) {
-	//var C = new controller(req, resp);
 	common.indexAction();
 	this.indexAction = function() {
 		var sys_name = '小馒头管理系统';
@@ -36,7 +35,6 @@ var indexController = function(web, temp) {
 	};
 
 	this.testAction = function() {
-		//session('name','xiaomin');
 		var result = temp.display();
 		return result;
 	};
