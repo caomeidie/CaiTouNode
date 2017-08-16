@@ -1,9 +1,26 @@
 var upload = require(config.libPath + 'upload');
 var common = require('./common');
-//var mysql = require('mysql');
+var mysql = require('mysql');
 var indexController = function(web, temp) {
 	common.indexAction();
 	this.indexAction = function() {
+		var connection = mysql.createConnection({
+		    host: 'localhost',
+		    user: 'root',
+		    password: '123456',
+		    database:'test_data'
+		});
+
+		connection.connect();
+		//查询
+		connection.query('SELECT * from tree', function(err, rows, fields) {
+		    if (err) throw err;
+		    console.log(rows[0]['id']);
+		});
+		
+		//关闭连接
+		connection.end();
+		//return false;
 		var sys_name = '小馒头管理系统';
 		var opt = new Array();
 		opt['httpOnly'] = true;
@@ -36,13 +53,18 @@ var indexController = function(web, temp) {
 
 	this.testAction = function() {
 		var result = temp.display();
+		console.log(web.isGet);
+		console.log(web.isPost);
 		return result;
 	};
 
 	this.postloginAction = function() {
+		console.log(web.isGet);
+		console.log(web.isPost);
+		console.log(web.post);
 		var file_path = './ccc.jpg';
 		upload.set_size(500);
-		upload.upload(POST.bbb, file_path, (err) = > {
+		upload.upload(web.post.bbb, file_path, (err) => {
 			if (!err) {
 				console.log('success');
 			} else {
