@@ -4,12 +4,14 @@
  * @create date:2017/05/22
  *
  * */
-var config_app = {
-	//template static files' path
-	tempParam: {
-		__CSS__: config.publicPath + MODULE_NAME + '/css/',
-		__JS__: config.publicPath + MODULE_NAME + '/js/',
-		__IMG__: config.publicPath + MODULE_NAME + '/images/',
-	}
+var config_app = function(module) {
+	return {
+		//template static files' path
+		tempParam: {
+			__CSS__: config.publicPath + module + '/css/',
+			__JS__: config.publicPath + module + '/js/',
+			__IMG__: config.publicPath + module + '/images/',
+		}
+	};	
 };
 module.exports = config_app;
