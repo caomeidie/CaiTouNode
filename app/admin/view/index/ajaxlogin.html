@@ -6,15 +6,10 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 		<meta name="renderer" content="webkit">
-		<title>Demo-普通登录</title>
-		<!--
-        	作者：大火兔 1979788761@qq.com
-        	时间：2015-11-17
-        	描述：使用官网CSS/JS同步最新版
-        -->
+		<title>Demo-Ajax登录</title>
 		<link rel="stylesheet" href="<%= __CSS__ %>/login.css">
 		<link rel="stylesheet" href="<%= __CSS__ %>/admin.css">
-		<script src="<%= __JS__ %>/jquery.js"></script>
+		<script src="<%= __JS__ %>/jquery-1.12.1.min.js"></script>
 		<script src="<%= __JS__ %>/login.js"></script>
 		<script src="<%= __JS__ %>/admin.js"></script>
 	</head>
@@ -25,35 +20,48 @@
 				<div class="xs6 xm4 xs3-move xm4-move">
 					<br />
 					<br />
-					<div class="media media-y">
-						<a href="" target="_blank"><img src="<%= __IMG__ %>/logo.png" class="radius" alt="后台管理系统" /></a>
-					</div>
 					<br />
 					<br />
-					<form action="http://localhost:8888/admin/index/test" method="post">
+					<form data-url="http://localhost:8888/admin/index/postlogin">
 						<div class="panel">
-							<div class="panel-head"><strong>登录<%= sys_name %></strong></div>
+							<div class="panel-head"><strong>登录</strong></div>
 							<div class="panel-body" style="padding:30px;">
 								<div class="form-group">
 									<div class="field field-icon-right">
-										<input type="text" class="input" name="admin" placeholder="登录账号" data-validate="required:请填写账号,length#>=5:账号长度不符合要求" />
+										<input type="text" class="input" id="name" name="name" placeholder="登录账号" data-validate="required:请填写账号,length#>=5:账号长度不符合要求" />
 										<span class="icon icon-user"></span>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="field field-icon-right">
-										<input type="password" class="input" name="password" placeholder="登录密码" data-validate="required:请填写密码,length#>=6:密码长度不符合要求" />
+										<input type="password" class="input" id="pass" name="password" placeholder="登录密码" data-validate="required:请填写密码,length#>=6:密码长度不符合要求" />
 										<span class="icon icon-key"></span>
 									</div>
 								</div>
 							</div>
 							<div class="panel-foot text-center">
-								<input type="submit" value="立即登录后台" class="button button-block bg-main text-big" />
+								<input type="button" value="立即登录后台" class="submit button button-block bg-main text-big" />
 							</div>
 						</div>
 					</form>
 				</div>
 			</div>
 		</div>
+		<script type="text/javascript">
+			$(function(){
+				$(".submit").click(function(){
+					var name = $('#name').val();
+					var pass = $('#pass').val();
+					var url=$("form").attr('data-url');
+					$.post(url,{name:name,pass:pass},function(data){
+						if(data.status){
+							$('.submit').val('登录成功');
+						}else{
+							$('.submit').val('重新登录');
+						}
+					}, 'json');
+				});
+			})
+		</script>
 	</body>
 </html>

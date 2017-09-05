@@ -24,5 +24,12 @@
         </fieldset>
     </form>
 </div>
+<ul>
+    <% for(var i=0; i<supplies.length; i++) { %>
+        <li>
+            id:<%= supplies[i]['id'] %>-----name:<%= supplies[i]['name'] %>
+        </li>
+    <% } %>
+</ul>
 </body>
 </html>

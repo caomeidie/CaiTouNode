@@ -42,7 +42,7 @@ var indexController = function(web, temp) {
 		//web.unsetSession('name5');
 		//console.log(web.getSession());
 		//web.unsetSession();
-		console.log(web.getSession());
+		console.log(web.get);
 		temp.assign({
 			sys_name: sys_name
 		});
@@ -51,12 +51,21 @@ var indexController = function(web, temp) {
 
 	this.testAction = function() {
 		DB.select("select * from tll_user", function(err,results,fields){
-			//console.log(results);
+			temp.assign({supplies:results});
 			temp.display();
 		});
 	};
 
-	this.postloginAction = function() {
+	this.ajaxloginAction = function(){
+		temp.assign({});
+		temp.display();
+	}
+
+	this.postloginAction = function(){
+		temp.ajaxReturn({status:true, data:'helloworld'});
+	}
+
+	this.postAction = function() {
 		console.log(web.isGet);
 		console.log(web.isPost);
 		console.log(web.post);
@@ -69,7 +78,15 @@ var indexController = function(web, temp) {
 				console.log('faild');
 			}
 		});
-		temp.display();
+		temp.ajaxReturn({status:true, data:'helloworld'});
+	}
+
+	this.errorAction = function(){
+		temp.error("操作有误");
+	}
+
+	this.successAction = function(){
+		temp.success("操作成功");
 	}
 }
 
