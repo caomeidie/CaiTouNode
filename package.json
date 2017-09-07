@@ -1,0 +1,25 @@
+{
+  "name": "caitou",
+  "version": "1.0.0",
+  "description": "A lightweight & simple & well-bedded web framework.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caomeidie/CaiTouNode.git"
+  },
+  "keywords": [
+    "caitou",
+    "caitounode",
+    "web",
+    "framework"
+  ],
+  "author": "Henry Lee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caomeidie/CaiTouNode/issues"
+  },
+  "homepage": "https://github.com/caomeidie/CaiTouNode#readme"
+}
