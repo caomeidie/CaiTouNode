@@ -1,7 +1,7 @@
 {
   "name": "caitou",
   "version": "1.0.0",
-  "description": "A lightweight & simple & well-bedded web framework.",
+  "description": "A lightweight & simple & well-bedded web framework",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -20,6 +20,10 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/caomeidie/CaiTouNode/issues"
+  },
+  "dependencies": {
+    "ejs": "~2.5.7",
+    "mysql": "~2.14.1"
   },
   "homepage": "https://github.com/caomeidie/CaiTouNode#readme"
 }
