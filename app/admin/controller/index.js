@@ -20,7 +20,7 @@ var indexController = function(web, temp) {
 		// //关闭连接
 		// connection.end();
 		//return false;
-		var sys_name = '小馒头管理系统';
+		var sys_name = '菜头管理系统';
 		var opt = new Array();
 		opt['httpOnly'] = true;
 		// web.setCookie('name','xiaomimi',opt);
@@ -42,7 +42,7 @@ var indexController = function(web, temp) {
 		//web.unsetSession('name5');
 		//console.log(web.getSession());
 		//web.unsetSession();
-		console.log(web.get);
+		console.log(web.get());
 		temp.assign({
 			sys_name: sys_name
 		});
@@ -68,7 +68,7 @@ var indexController = function(web, temp) {
 	this.postAction = function() {
 		console.log(web.isGet);
 		console.log(web.isPost);
-		console.log(web.post);
+		console.log(web.post());
 		var file_path = './ccc.jpg';
 		upload.set_size(500);
 		upload.upload(web.post.bbb, file_path, (err) => {
