@@ -32,6 +32,7 @@ $ npm install caitou
   * Support ejs package
   * Support mysql package
   * Support formidable package
+  * Filter the input data both get as well as post method
   
 ## Related projects
 
