@@ -31,6 +31,7 @@ $ npm install caitou
   * Support error and success return
   * Support ejs package
   * Support mysql package
+  * Support formidable package
   
 ## Related projects
 

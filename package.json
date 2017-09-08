@@ -23,7 +23,8 @@
   },
   "dependencies": {
     "ejs": "~2.5.7",
-    "mysql": "~2.14.1"
+    "mysql": "~2.14.1",
+    "formidable": "~1.1.1"
   },
   "homepage": "https://github.com/caomeidie/CaiTouNode#readme"
 }
